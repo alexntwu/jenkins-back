@@ -11,7 +11,7 @@
         var request = new XMLHttpRequest();
         function doclick1() {
             request.onreadystatechange = callback;
-            request.open("GET", "http://localhost:9080/ajax/pages/products/2");
+            request.open("GET", "http://localhost:6080/ajax/pages/products/2");
             request.send();
         }
 
@@ -24,11 +24,11 @@
         function doclick2() {
             axios({
                 method: "get",
-                url: "http://localhost:9080/ajax/pages/products/2",
+                url: "http://localhost:6080/ajax/pages/products/2",
             });
         }
         function callFindByPrimaryKey() {
-            axios.get("http://localhost:9080/ajax/pages/products/2").then(function (response) {
+            axios.get("http://localhost:6080/ajax/pages/products/2").then(function (response) {
                 console.log("response", response.data.list[0]);
                 let obj = response.data.list[0];
                 console.log("obj", obj.id, obj.name, obj.price, obj.make, obj.expire);
@@ -47,7 +47,7 @@
                 "expire": 7
             };
             try {
-                const response = await axios.put("http://localhost:9080/ajax/pages/products/11", body);
+                const response = await axios.put("http://localhost:6080/ajax/pages/products/11", body);
                 console.log("response", response);
                 if (response.data.success) {
                     Swal.fire({
@@ -77,7 +77,7 @@
                 "expire": 4
             };
             try {
-                const response = await axios.post("http://localhost:9080/ajax/pages/products", body);
+                const response = await axios.post("http://localhost:6080/ajax/pages/products", body);
                 console.log("response", response);
                 if (response.data.success) {
                     Swal.fire({
@@ -106,7 +106,7 @@
             }).then(async function (result) {
                 if (result.isConfirmed) {
                     try {
-                        const response = await axios.delete("http://localhost:9080/ajax/pages/products/11");
+                        const response = await axios.delete("http://localhost:6080/ajax/pages/products/11");
                         console.log("response", response);
                         if (response.data.success) {
                             Swal.fire({
@@ -137,7 +137,7 @@
                 "sort": "id",
                 "name": "a"
             };
-            axios.post("http://localhost:9080/ajax/pages/products/find", body).then(function (response) {
+            axios.post("http://localhost:6080/ajax/pages/products/find", body).then(function (response) {
                 console.log("response", response);
 
 
